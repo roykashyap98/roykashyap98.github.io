@@ -111,3 +111,18 @@ section:hover {
     height: 10px;
     border-radius: 5px;
 }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s; /* Taki transition smooth ho */
+}
