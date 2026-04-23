@@ -84,3 +84,30 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
 }
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+.btn {
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}.bar {
+    background: #1e293b;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.fill {
+    background: #38bdf8;
+    height: 10px;
+    border-radius: 5px;
+}
