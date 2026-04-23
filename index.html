@@ -1,173 +1,231 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohit Kumar | Structural Detailer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Kumar | Structural Detailer</title>
 
-```
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f4f6f8;
-        color: #333;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b1220;
+    color: #e2e8f0;
+    scroll-behavior: smooth;
+}
 
-    header {
-        background: #0f172a;
-        color: white;
-        text-align: center;
-        padding: 40px 20px;
-    }
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(2,6,23,0.8);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    text-align: center;
+    z-index: 1000;
+}
+nav a {
+    color: #e2e8f0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+nav a:hover {
+    color: #38bdf8;
+}
 
-    header h1 {
-        margin: 0;
-        font-size: 32px;
-    }
+/* HERO */
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg,#0f172a,#020617);
+}
+header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+header p {
+    color: #94a3b8;
+}
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    transform: scale(1.05);
+    background: #1d4ed8;
+}
 
-    header p {
-        margin-top: 10px;
-        font-size: 16px;
-        color: #cbd5f5;
-    }
+/* SECTION */
+section {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+section:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+}
 
-    section {
-        max-width: 900px;
-        margin: 20px auto;
-        background: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
+h2 {
+    color: #38bdf8;
+}
 
-    h2 {
-        color: #0f172a;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 5px;
-    }
+/* SKILLS */
+.bar {
+    background: #1e293b;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.fill {
+    background: #38bdf8;
+    height: 10px;
+    border-radius: 5px;
+}
 
-    ul {
-        padding-left: 20px;
-    }
+/* PROJECT FILTER */
+.filter-btns {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.filter-btns button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.project {
+    display: none;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    margin: 10px 0;
+    border-radius: 8px;
+}
 
-    li {
-        margin-bottom: 8px;
-    }
+/* CONTACT */
+.contact-box p {
+    margin: 8px 0;
+}
 
-    .contact p {
-        margin: 6px 0;
-    }
-
-    footer {
-        text-align: center;
-        padding: 15px;
-        font-size: 14px;
-        color: #777;
-    }
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
 </style>
-```
-
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+<a href="#profile">Profile</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
 <header>
-    <h1>Rohit Kumar</h1>
-    <p>Structural Detailer | AutoCAD & Tekla Structures</p>
+<h1>Rohit Kumar</h1>
+<p>Structural Detailer | AutoCAD | Tekla Structures</p>
+<a href="#projects" class="btn">View Projects</a>
+<a href="files/resume.pdf" class="btn" download>Download Resume</a>
 </header>
 
-<section>
-    <h2>Profile Summary</h2>
-    <p>
-        Detail-oriented Structural Detailer with 1 year of experience in preparing RDSO-based drawings 
-        and 3D models using AutoCAD and Tekla Structures. Skilled in delivering accurate and 
-        production-ready drawings for railway and steel structure projects.
-    </p>
+<!-- PROFILE -->
+<section id="profile">
+<h2>Profile</h2>
+<p>
+Detail-oriented Structural Detailer with 1 year experience in RDSO-approved drawings,
+AutoCAD drafting and Tekla Structures 3D modeling.
+</p>
 </section>
 
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li>Advanced Computer Knowledge</li>
-        <li>AutoCAD (2D Drafting & Detailing)</li>
-        <li>Tekla Structures (3D Modeling & Detailing)</li>
-        <li>Structural Drawing Interpretation</li>
-        <li>BOQ & Quantity Takeoff</li>
-    </ul>
-</section>
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
 
-<section>
-    <h2>Experience</h2>
-    <p><strong>Structural Detailer – 1 Year Experience</strong></p>
-    <ul>
-        <li>Worked on RDSO-approved drawings</li>
-        <li>Prepared GA drawings and detailed drawings</li>
-        <li>Created 3D models using Tekla Structures</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Projects</h2>
-    <p><strong>Project 1:</strong> Railway Structure Detailing (RDSO Based)</p>
-    <p><strong>Project 2:</strong> Steel Structure Detailing using Tekla</p>
-</section>
-
-<section class="contact">
-    <h2>Contact Information</h2>
-    <p><strong>Name:</strong> Rohit Kumar</p>
-    <p><strong>Address:</strong> Shahabad Markanda,KKR (136135)</p>
-    <p><strong>Mobile:</strong> *****38123</p>
-    <p><strong>Email:</strong> rohitkashyap4488@gmail.com</p>
-</section>
-
-<footer>
-    © 2026 Rohit Kumar | Structural Portfolio
-</footer>
-
-</body>
-</html>
-<a href="files/your-drawing.pdf" download class="btn">Download </a><h2>Project Gallery</h2>
-<div class="gallery">
-    <img src="images/project1.jpg" alt="Project 1">
-    <img src="images/project2.jpg" alt="Project 2">
-</div><h3>Project Files</h3>
-<ul>
-    <li><a href="files/drawing.pdf" download>Download Drawing PDF</a></li>
-    <li><a href="files/boq.xlsx" download>Download BOQ</a></li>
-</ul><nav>
-    <a href="#profile">Profile</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
-<header>
-    <h1>Rohit Kumar</h1>
-    <p>Structural Detailer | AutoCAD | Tekla Structures</p>
-    <a href="#projects" class="btn">View My Work</a>
-    <a href="files/resume.pdf" class="btn" download>Download Resume</a>
-</header><h3>Railway Structure Detailing (RDSO)</h3>
-
-<p><strong>Problem:</strong> Complex railway structure detailing required with accuracy.</p>
-
-<p><strong>Solution:</strong> AutoCAD + Tekla Structures used for precise detailing.</p>
-
-<p><strong>My Role:</strong> GA drawings, fabrication drawings, BOQ preparation.</p>
-
-<p><strong>Result:</strong> Error-free production-ready drawings delivered.</p>
-
-<a href="files/project1.pdf" class="btn" download>Download Full Project</a><h2>Contact Me</h2>
-
-<div class="contact-box">
-    <p>📍 Address: Shahabad markanda</p>
-    <p>📞 Mobile: 8307138123</p>
-    <p>📧 Email: rohitkashyap@gmail.com</p>
-
-    <a href="https://instagram.com" class="btn">Instagram</a>
-    <a href="https://facebook.com" class="btn">facbook</a>
-</div><p>AutoCAD</p>
+<p>AutoCAD</p>
 <div class="bar"><div class="fill" style="width:90%"></div></div>
 
 <p>Tekla Structures</p>
 <div class="bar"><div class="fill" style="width:85%"></div></div>
+
+<p>Computer Knowledge</p>
+<div class="bar"><div class="fill" style="width:80%"></div></div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="filter-btns">
+<button onclick="show('all')">All</button>
+<button onclick="show('cad')">AutoCAD</button>
+<button onclick="show('tekla')">Tekla</button>
+</div>
+
+<div class="project cad">
+<strong>Railway Structure Detailing</strong>
+<p>RDSO based GA drawings and detailing.</p>
+<a class="btn" href="files/drawing.pdf" download>Download</a>
+</div>
+
+<div class="project tekla">
+<strong>Steel Structure Modeling</strong>
+<p>3D modeling using Tekla Structures.</p>
+<a class="btn" href="files/model.pdf" download>Download</a>
+</div>
+
+</section>
+
+<!-- CONTACT (UPDATED) -->
+<section id="contact">
+<h2>Contact Me</h2>
+
+<div class="contact-box">
+    <p>📍 Address: Shahabad markanda KKR(136135)</p>
+    <p>📞 Mobile: 8307138123</p>
+    <p>📧 Email: rohitkashyap@gmail.com</p>
+
+    <a href="https://https://www.instagram.com/roy_k.98?igsh=MWZxNjJ0bzJvczdlbg%3D%3D&utm_source=qr" class="btn">Instagram</a>
+    <a href="https://https://www.facebook.com/share/1D5andqX8Y/?mibextid=wwXIfr" class="btn">Facebook</a>
+</div>
+</section>
+
+<footer>
+© 2026 Rohit Kumar | Structural Detailer Portfolio
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function show(type) {
+    let items = document.querySelectorAll('.project');
+    items.forEach(i => {
+        if(type === 'all') {
+            i.style.display = 'block';
+        } else {
+            i.style.display = i.classList.contains(type) ? 'block' : 'none';
+        }
+    });
+}
+show('all');
+</script>
+
+</body>
+</html>
