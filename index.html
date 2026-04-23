@@ -1,0 +1,62 @@
+<style>
+    :root {
+        --bg-color: #f9f9f9;
+        --text-color: #333;
+        --card-bg: white;
+        --nav-bg: #2d3436;
+    }
+
+    body.dark-theme {
+        --bg-color: #1a1a1a;
+        --text-color: #f4f4f4;
+        --card-bg: #2d2d2d;
+        --nav-bg: #000000;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: 0.5s; /* Smooth color change */
+    }
+
+    .card {
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+
+    /* Dark Mode Button Styling */
+    #theme-btn {
+        cursor: pointer;
+        background: #0984e3;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-left: 15px;
+    }
+</style>
+
+<nav>
+    <div class="logo"><strong>MeraBrand</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#portfolio">Projects</a>
+        <button id="theme-btn">🌙 Dark Mode</button>
+    </div>
+</nav>
+
+<script>
+    const themeBtn = document.getElementById('theme-btn');
+    const body = document.body;
+
+    themeBtn.onclick = () => {
+        body.classList.toggle('dark-theme');
+        
+        if(body.classList.contains('dark-theme')) {
+            themeBtn.innerHTML = "☀️ Light Mode";
+        } else {
+            themeBtn.innerHTML = "🌙 Dark Mode";
+        }
+    };
+</script>
