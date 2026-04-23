@@ -1,232 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohit Kumar | Structural Detailer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Kumar | Structural Detailer</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b1220;
-    color: #e2e8f0;
-    scroll-behavior: smooth;
-}
+    <style>
+        /* COLOR VARIABLES */
+        :root {
+            --bg-body: #0b1220;
+            --bg-nav: rgba(2,6,23,0.8);
+            --bg-section: rgba(255,255,255,0.03);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: rgba(255,255,255,0.08);
+        }
 
-/* NAVBAR */
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(2,6,23,0.8);
-    backdrop-filter: blur(10px);
-    padding: 12px;
-    text-align: center;
-    z-index: 1000;
-}
-nav a {
-    color: #e2e8f0;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-}
-nav a:hover {
-    color: #38bdf8;
-}
+        /* LIGHT MODE COLORS */
+        [data-theme="light"] {
+            --bg-body: #f8fafc;
+            --bg-nav: rgba(255,255,255,0.9);
+            --bg-section: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #2563eb;
+            --border: #e2e8f0;
+        }
 
-/* HERO */
-header {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg,#0f172a,#020617);
-}
-header h1 {
-    font-size: 40px;
-    margin: 0;
-}
-header p {
-    color: #94a3b8;
-}
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 16px;
-    background: #2563eb;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.btn:hover {
-    transform: scale(1.05);
-    background: #1d4ed8;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+            transition: 0.3s ease;
+        }
 
-/* SECTION */
-section {
-    max-width: 1000px;
-    margin: 25px auto;
-    padding: 25px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    transition: 0.3s;
-}
-section:hover {
-    transform: translateY(-4px);
-    border-color: #38bdf8;
-}
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--bg-nav);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        nav a {
+            color: var(--text-main);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover { color: var(--accent); }
 
-h2 {
-    color: #38bdf8;
-}
+        /* THEME TOGGLE BUTTON */
+        #theme-toggle {
+            padding: 5px 12px;
+            cursor: pointer;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--text-main);
+            font-size: 14px;
+            margin-left: 10px;
+        }
 
-/* SKILLS */
-.bar {
-    background: #1e293b;
-    height: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-.fill {
-    background: #38bdf8;
-    height: 10px;
-    border-radius: 5px;
-}
+        /* HERO */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0f172a, #020617);
+            color: white; /* Header ko hamesha dark rakha hai modern look ke liye */
+        }
+        header h1 { font-size: 40px; margin: 0; }
+        header p { color: #94a3b8; }
 
-/* PROJECT FILTER */
-.filter-btns {
-    text-align: center;
-    margin-bottom: 15px;
-}
-.filter-btns button {
-    padding: 8px 12px;
-    margin: 5px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.project {
-    display: none;
-    padding: 10px;
-    background: rgba(255,255,255,0.05);
-    margin: 10px 0;
-    border-radius: 8px;
-}
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 16px;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: scale(1.05); background: #1d4ed8; }
 
-/* CONTACT */
-.contact-box p {
-    margin: 8px 0;
-}
+        /* SECTION */
+        section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 25px;
+            background: var(--bg-section);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 { color: var(--accent); }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #64748b;
-}
-</style>
+        /* SKILLS BAR */
+        .bar { background: #cbd5e1; height: 10px; border-radius: 5px; margin-bottom: 10px; }
+        .fill { background: var(--accent); height: 10px; border-radius: 5px; }
+
+        /* PROJECTS */
+        .project { 
+            display: none; padding: 15px; 
+            background: rgba(125,125,125,0.05); 
+            margin: 15px 0; border-radius: 8px; 
+            border-left: 4px solid var(--accent);
+        }
+
+        footer { text-align: center; padding: 40px; color: var(--text-muted); }
+    </style>
 </head>
-
 <body>
 
-<!-- NAV -->
 <nav>
-<a href="#profile">Profile</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+    <a href="#profile">Profile</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button id="theme-toggle">🌙 Mode</button>
 </nav>
 
-<!-- HERO -->
 <header>
-<h1>Rohit Kumar</h1>
-<p>Structural Detailer | AutoCAD | Tekla Structures</p>
-<a href="#projects" class="btn">View Projects</a>
-<a href="files/resume.pdf" class="btn" download>Download Resume</a>
+    <h1>Rohit Kumar</h1>
+    <p>Structural Detailer | AutoCAD | Tekla Structures</p>
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#" class="btn">Download Resume</a>
 </header>
 
-<!-- PROFILE -->
-<section id="profile">
-<h2>Profile</h2>
-<p>
-Detail-oriented Structural Detailer with 1 year experience in RDSO-approved drawings,
-AutoCAD drafting and Tekla Structures 3D modeling.
-</p>
+<section id="profile" data-aos="fade-up">
+    <h2>Profile</h2>
+    <p>Detail-oriented Structural Detailer with 1 year experience in RDSO-approved drawings, AutoCAD drafting and Tekla Structures 3D modeling.</p>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-<h2>Skills</h2>
-
-<p>AutoCAD</p>
-<div class="bar"><div class="fill" style="width:90%"></div></div>
-
-<p>Tekla Structures</p>
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-
-<p>Computer Knowledge</p>
-<div class="bar"><div class="fill" style="width:80%"></div></div>
+<section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <p>AutoCAD</p>
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+    <p>Tekla Structures</p>
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<h2>Projects</h2>
-
-<div class="filter-btns">
-<button onclick="show('all')">All</button>
-<button onclick="show('cad')">AutoCAD</button>
-<button onclick="show('tekla')">Tekla</button>
-</div>
-
-<div class="project cad">
-<strong>Railway Structure Detailing</strong>
-<p>RDSO based GA drawings and detailing.</p>
-<a class="btn" href="files/drawing.pdf" download>Download</a>
-</div>
-
-<div class="project tekla">
-<strong>Steel Structure Modeling</strong>
-<p>3D modeling using Tekla Structures.</p>
-<a class="btn" href="files/model.pdf" download>Download</a>
-</div>
-
+<section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div style="text-align:center; margin-bottom:20px;">
+        <button class="btn" onclick="show('all')">All</button>
+        <button class="btn" onclick="show('cad')">AutoCAD</button>
+        <button class="btn" onclick="show('tekla')">Tekla</button>
+    </div>
+    <div class="project cad">
+        <strong>Railway Structure Detailing</strong>
+        <p>RDSO based GA drawings and detailing.</p>
+    </div>
+    <div class="project tekla">
+        <strong>Steel Structure Modeling</strong>
+        <p>3D modeling using Tekla Structures.</p>
+    </div>
 </section>
 
-<!-- CONTACT (UPDATED) -->
-<section id="contact">
-<h2>Contact Me</h2>
-
-<div class="contact-box">
+<section id="contact" data-aos="zoom-in">
+    <h2>Contact Me</h2>
     <p>📍 Address: Shahabad markanda KKR(136135)</p>
-    <p>📞 Mobile: 8307138123</p>
+    <p>📞 Mobile: +91 8307138123</p>
     <p>📧 Email: rohitkashyap@gmail.com</p>
-
-    <a href="https://https://www.instagram.com/roy_k.98?igsh=MWZxNjJ0bzJvczdlbg%3D%3D&utm_source=qr" class="btn">Instagram</a>
-    <a href="https://https://www.facebook.com/share/1D5andqX8Y/?mibextid=wwXIfr" class="btn">Facebook</a>
-</div>
+    <div style="margin-top:20px;">
+        <a href="https://www.instagram.com/roy_k.98" class="btn">Instagram</a>
+        <a href="#" class="btn">Facebook</a>
+    </div>
 </section>
 
-<footer>
-© 2026 Rohit Kumar | Structural Detailer Portfolio
-</footer>
+<footer>© 2026 Rohit Kumar | Portfolio</footer>
 
-<!-- SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-function show(type) {
-    let items = document.querySelectorAll('.project');
-    items.forEach(i => {
-        if(type === 'all') {
-            i.style.display = 'block';
+    // Initialize Animations
+    AOS.init({ duration: 1000 });
+
+    // Project Filter Logic
+    function show(type) {
+        let items = document.querySelectorAll('.project');
+        items.forEach(i => {
+            i.style.display = (type === 'all' || i.classList.contains(type)) ? 'block' : 'none';
+        });
+    }
+    show('all');
+
+    // DARK MODE READY-MADE LOGIC
+    const btn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        btn.innerHTML = "☀️ Light";
+    }
+
+    btn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            btn.innerHTML = "🌙 Dark";
         } else {
-            i.style.display = i.classList.contains(type) ? 'block' : 'none';
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            btn.innerHTML = "☀️ Light";
         }
     });
-}
-show('all');
 </script>
 
 </body>
 </html>
-<button id="theme-toggle">🌙 Switch Mode</button>
