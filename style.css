@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 50px;
+  background: #020617;
+}
+
+section {
+  padding: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  background: #1e293b;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #334155;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #475569;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
